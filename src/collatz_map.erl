@@ -16,7 +16,7 @@ solveCollatzByMapGeneration()->
   CollatzCounts = lists:map(fun(X)-> {X, collatz_sequence_num_items(X)} end, lists:seq(2,1000000)),
   MaxCount = lists:max(lists:map(fun({_X,C}) -> C end, CollatzCounts)),
   FilteredTuple = lists:last(lists:filter(fun({_X,C}) -> C == MaxCount end, CollatzCounts)),
-  Value = element(1,FilteredTuple).
+  _Value = element(1,FilteredTuple).
 
 collatz_sequence_num_items(N) ->
   collatz_sequence_num_items(N, 0).
